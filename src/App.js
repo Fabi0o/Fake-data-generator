@@ -122,24 +122,41 @@ function App() {
   };
   return (
     <div className="App">
-      <form onChange={changeData}>
-        <label htmlFor="region">Choose a region:</label>
-        <select name="region" id="region" onChange={resetErrors}>
+      <form onChange={changeData} className="container">
+        <label htmlFor="region" className="m-1">
+          Choose a region:
+        </label>
+        <select
+          name="region"
+          id="region"
+          onChange={resetErrors}
+          className="m-1"
+        >
           <option value="pl">Poland</option>
           <option value="en_US">USA</option>
           <option value="de">Germany</option>
         </select>
-        <label htmlFor="seed">Choose random seed value:</label>
-        <input id="seed" type="number" defaultValue="100" />
-        <button onClick={generateSeed}>Random seed value</button>
-        <label htmlFor="errors">
-          Choose number of errors per one record(max 1000):
+        <label htmlFor="seed" className="m-1">
+          Choose random seed value:
         </label>
-        <input type="number" id="errors" defaultValue="0" />
-        <input type="range" defaultValue="0" max="10" step="0.5" />
+        <input id="seed" type="number" defaultValue="100" className="m-1" />
+        <button onClick={generateSeed} className="btn btn-primary m-1">
+          Random seed value
+        </button>
+        <label htmlFor="errors" className="m-1">
+          Choose number of errors per one record(max. 1000):
+        </label>
+        <input type="number" id="errors" defaultValue="0" className="m-1" />
+        <input
+          type="range"
+          defaultValue="0"
+          max="10"
+          step="0.5"
+          className="m-1"
+        />
       </form>
       <div id="tableContainer" onScroll={loadMore}>
-        <table>
+        <table className="table table-striped">
           <thead>
             <tr>
               <th>id</th>
